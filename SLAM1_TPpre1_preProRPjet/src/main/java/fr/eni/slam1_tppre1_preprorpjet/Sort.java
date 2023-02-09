@@ -22,6 +22,7 @@ public class Sort {
 
     public void affSort()
     {
+        System.out.print("Nom :"+ nom +"Degat Min :"+ degatMin +"Degat Max :"+ degatMax +"Portee :"+ portee +"Element :"+ element +"Critique :"+ critique*100+"%");
         /*
         Affiche tous les attributs d'un objet de classe Sort.
         /!\ Attention, on affichera l'attribut critique en pourcentage.
@@ -30,6 +31,7 @@ public class Sort {
     
     public void affDegatSort(int feu, int ter, int eau, int air)
     {
+       
         /*
         Affiche tous les dégât d'un sort en combat (dégâts avec et sans critique).
         Les dégâts en critique valent dégâts * 2.
@@ -44,6 +46,7 @@ public class Sort {
     }
     public int calculDegat(int stats, int degat)
     {
+        
         // Retourne les dégât totaux -> degat + degat * (stats/100)
         return 0;
     }

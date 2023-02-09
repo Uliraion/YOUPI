@@ -13,7 +13,8 @@ public class SLAM1_TPpre1_preProRPjet {
     
     public static void main(String[] args) {
         Personnage joueur = f.introduction();
-        String affMenu = "-----------------------------------------------------\n"
+        String affMenu = 
+                "-----------------------------------------------------\n"
                 + "Que voulez-vous faire ?\n"
                 + "1 - Gestions des statistiques.\n"
                 + "2 - Gestions des sorts.\n"

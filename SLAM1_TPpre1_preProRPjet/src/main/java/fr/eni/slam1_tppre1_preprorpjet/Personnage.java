@@ -41,6 +41,14 @@ public class Personnage {
 
     public void remettreZeroStats()
     {
+        setSagesse(0);
+        setForce(0);
+        setIntelligence(0);
+        setAgilite(0);
+        setChance(0);
+        setPv(50);
+        setPointDeCompetence((this.niveau-1)*5);
+        
         /*
         Remettre les statistiques à zéro (sauf la statistique PV qui sera remise à 50).
         Cette fonction rendra de nouveau disponible TOUS les points de compétence. 
@@ -48,6 +56,7 @@ public class Personnage {
     }
     public void affStats()
     {
+        System.out.print(this.classe+" "+this.nom+" "+this.pv+" "+this.sagesse+" "+this.intelligence+" "+this.force+" "+this.chance+" "+this.agilite);
         /*
         Cette fonction affiche la classe, le nom du personnage ainsi que toutes les statistiques.
         Vous pourrez vous aider des fonctions affX()que vous écrirez par la suite.
@@ -55,31 +64,40 @@ public class Personnage {
     }   
     public void affPv()
     {
+        System.out.print(this.pv);
         // Affiche la statistique pv. 
     }
     public void affSages()
     {
+        System.out.print(this.sagesse);
         // Affiche la statistique sagesse.
     }
     public void affIntel()
     {
+        System.out.print(this.intelligence);
         // Affiche la statistique intelligence.
     }
     public void affForce()
     {
+        System.out.print(this.force);
         // Affiche la statistique force.
     }
     public void affChanc()
     {
+        System.out.print(this.chance);
         // Affiche la statistique chance.
     }
     public void affAgili()
     {
+        System.out.print(this.agilite);
         // Affiche la statistique agilité.
     }    
     
     public void affSorts()
     {
+       sortUn.affSort();
+       sortDeux.affSort();
+       sortTrois.affSort();
         /*
         Afficher les 3 sorts (sortUn, sortDeux, sortTrois) à l'aide de la fonction affSort (disponible dans la classe Sort).
         */
@@ -87,6 +105,7 @@ public class Personnage {
     
     public void affSortsCombat()
     {
+        
         /*
         Utiliser affDegatSort sur les trois sorts du personnage.
         Cela servira à afficher les dégâts des sorts en combat :
@@ -96,6 +115,25 @@ public class Personnage {
     
     public void augmenterStats(int nbAugmenter, int choixStats)
     {
+        
+        if(choixStats == 1){
+        setPv(this.pv);
+        }
+        if(choixStats == 2){
+        setSagesse(nbAugmenter);
+        }
+        if(choixStats == 3){
+        setIntelligence(nbAugmenter);
+        }
+        if(choixStats == 4){
+        setForce(nbAugmenter);
+        }
+        if(choixStats == 5){
+        setChance(nbAugmenter);
+        }
+        if(choixStats == 6){
+        setAgilite(nbAugmenter);
+        }
         /*
         Augmente la statistiques de nbAugmenter choisies via choixStats :
         -> 1 : Vitalité
