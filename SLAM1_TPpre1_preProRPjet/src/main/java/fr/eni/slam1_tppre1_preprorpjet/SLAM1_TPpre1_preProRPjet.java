@@ -12,7 +12,6 @@ public class SLAM1_TPpre1_preProRPjet {
     static fonctionDofus f = new fonctionDofus();
     
     public static void main(String[] args) {
-        String[] s = {};
         Personnage joueur = f.introduction();
         String affMenu = "-----------------------------------------------------\n"
                 + "Que voulez-vous faire ?\n"
@@ -41,51 +40,5 @@ public class SLAM1_TPpre1_preProRPjet {
                 + "5 - Chance\n"
                 + "6 - Agilité\n"
                 + "-----------------------------------------------------";
-        String affPoint = "-----------------------------------------------------\n"
-                + "Combien voulez-vous investir (1 - ";
-
-        int choixMenu;
-        int choixSousMenu;
-        int choixMontant;
-        do
-        {
-            choixMenu = f.repet(4, affMenu);
-            if(choixMenu == 1)
-            {
-                choixSousMenu = f.repet(4, affMenuStats);
-                if(choixSousMenu == 1)
-                    joueur.affStats();            
-                if(choixSousMenu == 2)
-                {
-                    if(joueur.getPointDeCompetence() > 0)
-                    {
-                        System.out.println("Vous avez " + joueur.getPointDeCompetence() + " point(s) restant(s).");
-                        choixMontant = f.repet(joueur.getPointDeCompetence(),
-                                affPoint + joueur.getPointDeCompetence() + ") ?");
-                        joueur.augmenterStats(choixMontant, f.repet(6,affStats));
-                    }
-                    else
-                    {
-                        System.out.println("Vous n'avez plus de point !");
-                    }
-                }
-                if(choixSousMenu == 3)
-                    joueur.remettreZeroStats();
-            }
-            if(choixMenu == 2)
-            {
-                choixSousMenu = f.repet(3, affMenuSorts);
-                if(choixSousMenu == 1)
-                    joueur.affSorts();
-                if(choixSousMenu == 2)
-                    joueur.affSortsCombat(); 
-            }
-            if(choixMenu == 3)
-            {
-                main(s);  
-                break;
-            }    
-        } while(choixMenu != 4);
-        System.out.println("Vous quittez Dofus.");
     }
 }
